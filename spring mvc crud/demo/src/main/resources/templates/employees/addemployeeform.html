@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+</head>
+<body>
+    <h2>New Employee form</h2>
+    <form th:action="@{/employees/addEmployee}" th:object="${employee}" method="POST">
+        <input type="hidden" th:field="${employee.id}"></input>
+        <input type="text" th:field="${employee.firstName}" name="firstName" placeholder="Enter first name"></input>
+        <br>
+        <input type="text" th:field="*{lastName}" name="lastName" placeholder="Enter last name"></input>
+        <br>
+        <input type="text" th:field="${employee.email}" name="email" placeholder="Enter Email"></input>
+        <br>
+        <input type="submit" name="Save"/>
+    </form>
+
+    <div>
+        <a th:href="@{/employees/all}"> Back to Employees </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span th:text="${customer.firstName + ' ' + customer.lastName }"></span>
+    <br>
+    <div>
+        <span>No of Tickets: </span>
+        <span th:text="${customer.noOfTickets }"></span>
+    </div>
+    <br>
+    <div>
+        <span>Postal code: </span>
+        <span th:text="${customer.postalCode }"></span>
+    </div>
+    <br>
+    <div>
+        <span>Coupon code: </span>
+        <span th:text="${customer.couponCode }"></span>
+    </div>
+</body>
+</html>

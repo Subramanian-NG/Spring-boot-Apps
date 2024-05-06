@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/processCustomerForm}" method="POST" th:object="${customer}">
+        <input type="text" th:field="${customer.firstName}" name="firstName" placeholder="Enter Customer first name"></input>
+        <br>
+        <input type="text" th:field="${customer.lastName}" name="lastName" placeholder="Enter Customer last  name"></input>
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="${customer.lastName}" class="error"></span>
+        <br>
+        <input type="submit"/>
+    </form>
+</body>
+</html>

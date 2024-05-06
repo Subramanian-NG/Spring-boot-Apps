@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/demo.css}"/>
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/processCustomerForm}" method="POST" th:object="${customer}">
+        <label>First Name :</label>
+        <input type="text" th:field="${customer.firstName}" name="firstName"></input>
+        <br>
+        <br>
+        <label>Last Name :</label>
+        <input type="text" th:field="${customer.lastName}" name="lastName"></input>
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="${customer.lastName}" class="error"></span>
+        <br>
+        <br>
+        <label>No of Tickets :</label>
+        <input type="number" th:field="${customer.noOfTickets}" name="noOfTickets"></input>
+        <span th:if="${#fields.hasErrors('noOfTickets')}" th:errors="${customer.noOfTickets}" class="error"></span>
+        <br>
+        <br>
+        <label>Postal code :</label>
+        <input type="text" th:field="${customer.postalCode}" name="postalCode"></input>
+        <span th:if="${#fields.hasErrors('postalCode')}" th:errors="${customer.postalCode}" class="error"></span>
+        <br>
+        <br>
+        <label>Coupon code :</label>
+        <input type="text" th:field="${customer.couponCode}" name="couponCode"></input>
+        <span th:if="${#fields.hasErrors('couponCode')}" th:errors="${customer.couponCode}" class="error"></span>
+        <br>
+        <br>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
